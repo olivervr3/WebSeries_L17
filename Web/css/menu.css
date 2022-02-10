@@ -1,0 +1,11 @@
+#MenuNoIdentificado li, #MenuIdentificado li {
+    width: auto;
+    margin: 1em;
+}
+
+    #MenuNoIdentificado li a, #MenuIdentificado li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        font-weight: bold;
+    }

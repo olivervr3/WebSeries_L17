@@ -1,0 +1,19 @@
+*.suo
+# *.dll
+*.cache
+# *.pdb
+*.cache
+# *.config
+# *.exe
+/.vs/WebSeries/v16/Server/sqlite3
+/.vs/slnx.sqlite
+slnx.sqlite
+/Web/App_Data/Database_log.ldf
+/.vs/ProjectSettings.json
+/.vs/VSWorkspaceState.json
+/Entrega1.md
+.vs/WebSeries/config/applicationhost.config
+/.vs/slnx.sqlite-journal
+/Web/obj/Debug
+/Library/bin/Debug
+/Library/obj/Debug

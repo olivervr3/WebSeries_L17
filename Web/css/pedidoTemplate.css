@@ -1,0 +1,13 @@
+﻿body {
+    background-color: #eeeeee;
+}
+
+.resaltado {
+    border-radius: 20px;
+    width: 800px;
+    height: 800px;
+    position: fixed;
+    background-color: lightgoldenrodyellow;
+    margin: 50px;
+}
+

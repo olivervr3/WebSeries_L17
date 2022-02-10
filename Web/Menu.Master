@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="Web.Menu" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/menu.css" rel="stylesheet"/>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="body1" runat="server" style="background-color:lightyellow">
+ 
+    <form id="form1" runat="server">
+        
+        <div class="container">
+            <div class="row" role="banner">
+                <div class="col-md-4">
+                    <a href="Inicio.aspx" title="Ir a inicio">
+                        <img src="logo/logo_size.jpg" alt="SeriesPlus" />
+                    </a>
+                </div>
+                <div class="col-md-8">                    
+                          
+                    <% if (Session["usuario"] == null)
+                        { %>
+                        <!-- Si no está identificado -->
+                        <asp:menu id="MenuNoIdentificado" orientation="Horizontal" runat="server" CssClass="float-right">
+                            <items>
+                                <asp:menuitem navigateurl="~/Biblioteca.aspx" text="Series" tooltip="Descubre la biblioteca de series" />
+                                <asp:menuitem navigateurl="~/Info.aspx" text="Acerca de" tooltip="Conoce todo de SeriesPlus" />
+                                <asp:menuitem navigateurl="~/Cesta.aspx" text="Cesta" tooltip="Ver mi cesta" />                
+                                
+                                <asp:menuitem navigateurl="~/Inicio.aspx" text="Iniciar sesión" ToolTip="Identificate en SeriesPlus" />                                                                                 
+                                <asp:menuitem navigateurl="~/CrearUsuario.aspx" text="Registrarme" ToolTip="Crea tu cuenta en SeriesPlus" />                                                                                 
+                            
+                            </items>
+                        </asp:menu>   
+                        <% }
+                        else
+                        { %>
+
+                        <asp:menu id="MenuIdentificado" orientation="Horizontal" runat="server" CssClass="float-right">
+                        <items>
+       
+                            <asp:menuitem navigateurl="~/Biblioteca.aspx" text="Series" tooltip="Descubre la biblioteca de series" />
+                            <asp:menuitem navigateurl="~/Info.aspx" text="Acerca de" tooltip="Conoce todo de SeriesPlus" />
+                            <asp:menuitem navigateurl="~/Cesta.aspx" text="Cesta" tooltip="Ver mi cesta" />                
+                                
+                            <asp:menuitem navigateurl="~/ModificarUsuario.aspx" text="Mi cuenta" tooltip="Modifica tus datos de usuario" >
+                                <asp:menuitem navigateurl="~/MisSeries.aspx" text="Mis series" tooltip="Accede a mis series"/>
+                                <asp:menuitem navigateurl="~/SeriesPendientes.aspx" text="Series pendientes" tooltip="Recuerda tus series pendientes"/>                                            
+                                <asp:menuitem navigateurl="~/MisPedidos.aspx" text="Mis pedidos" tooltip="Consulta tu lista de pedidos"/>
+                                <asp:menuitem navigateurl="~/Salir.aspx" text="Cerrar sesión" tooltip="Desconectate de SeriesPlus"/>                            
+                            </asp:menuitem>                                             
+                        </items>
+                    </asp:menu>   
+                        
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+               
+        <div id="contenido-principal" class="container" role="main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+
+</body>
+</html>
